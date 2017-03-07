@@ -6,6 +6,13 @@
 # phpstorm project files
 .idea
 
+# env files
+.env
+.env-dist
+
+# htacces
+.htaccess
+
 # netbeans project files
 nbproject
 
