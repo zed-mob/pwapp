@@ -15,9 +15,6 @@ return [
 		'user' => [
             'class' => 'backend\modules\user\Module',
         ],
-		'admin' => [
-			'class' => 'mdm\admin\Module',
-		],
 	],
 	'aliases' => [
 		'@mdm/admin' => '@app/vendor/mdmsoft/yii2-admin',
