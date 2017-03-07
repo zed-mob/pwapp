@@ -15,6 +15,12 @@ return [
 		'user' => [
             'class' => 'backend\modules\user\Module',
         ],
+		'admin' => [
+			'class' => 'mdm\admin\Module',
+		],
+	],
+	'aliases' => [
+		'@mdm/admin' => '@app/vendor/mdmsoft/yii2-admin',
 	],
     'components' => [
 		'request' => [
@@ -27,7 +33,7 @@ return [
         ],
         'session' => [
             // this is the name of the session cookie used for login on the backend
-            'name' => 'yfp-6-backend',
+            'name' => 'pwapp-backend',
         ],
         'log' => [
             'traceLevel' => getenv('YII_DEBUG') ? 3 : 0,
