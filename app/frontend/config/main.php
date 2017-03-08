@@ -9,14 +9,15 @@ $params = array_merge(
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+	'bootstrap' => ['log'],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
         'user' => [
-            'identityClass' => 'common\models\User',
+            // 'identityClass' => 'common\models\User',
+			'identityClass' => 'mdm\admin\models\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
@@ -37,8 +38,8 @@ return [
             'errorAction' => 'site/error',
         ],
 		'urlManager' => [
-            'enablePrettyUrl'		=> true,
-            'showScriptName'		=> false,
+            'enablePrettyUrl' => true,
+            'showScriptName'  => false,
             'rules' => [
 				// Dashboard module routes
 				'dashboard' => 'dashboard/default/index',

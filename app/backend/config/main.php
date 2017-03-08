@@ -12,13 +12,16 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [
+		'admin' => [
+            'mainLayout' => '@backend/themes/000-base/views/layouts/main.php',
+	    ],
 		'user' => [
             'class' => 'backend\modules\user\Module',
         ],
 	],
-	'aliases' => [
-		'@mdm/admin' => '@app/vendor/mdmsoft/yii2-admin',
-	],
+	// 'aliases' => [
+	// 	'@mdm/admin' => '@app/vendor/mdmsoft/yii2-admin',
+	// ],
     'components' => [
 		'request' => [
             'csrfParam' => '_csrf-backend',

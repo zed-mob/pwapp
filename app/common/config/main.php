@@ -32,9 +32,9 @@ return [
 	        'loginUrl' => ['user/login'],
 	    ],
 		'urlManager' => [
-            'enablePrettyUrl'		=> true,
-            'showScriptName'		=> false,
-            'enableStrictParsing'	=> false,
+            'enablePrettyUrl'	  => true,
+            'showScriptName'	  => false,
+            'enableStrictParsing' => false,
             'rules' => [
 				// Remove 'site' parameter from URL
 				'<alias:\w+>' => 'site/<alias>',
