@@ -18,6 +18,9 @@ return [
 		'user' => [
             'class' => 'backend\modules\user\Module',
         ],
+		'dashboard' => [
+            'class' => 'backend\modules\dashboard\Module',
+        ],
 	],
     'components' => [
 		'request' => [
@@ -57,11 +60,12 @@ return [
         ],
 		'view' => [
 			'theme' => [
-				'basePath' => '@backend/themes/000-base',
-				'baseUrl' => '@web/assets',
+				'basePath' => '@backend/themes/clip-admin',
+				'baseUrl' => '@web/themes/clip-admin',
 				'pathMap' => [
-					'@backend/views' => '@backend/themes/000-base/views',
-					'@vendor/mdmsoft/yii2-admin/views' => '@backend/themes/000-base/views',
+					'@backend/views' => '@backend/themes/clip-admin',
+					'@vendor/mdmsoft/yii2-admin/views' => '@backend/themes/clip-admin',
+					'@backend/modules' => '@backend/themes/clip-admin/modules',
 				],
 			],
 		],
@@ -70,6 +74,7 @@ return [
 		'class' => 'mdm\admin\components\AccessControl',
 		'allowActions' => [
 			'user/*',
+			'dashboard/*',
 
 			// Internal access only
 			'admin/*',
