@@ -19,9 +19,6 @@ return [
             'class' => 'backend\modules\user\Module',
         ],
 	],
-	// 'aliases' => [
-	// 	'@mdm/admin' => '@app/vendor/mdmsoft/yii2-admin',
-	// ],
     'components' => [
 		'request' => [
             'csrfParam' => '_csrf-backend',
@@ -72,6 +69,8 @@ return [
 	'as access' => [
 		'class' => 'mdm\admin\components\AccessControl',
 		'allowActions' => [
+			'user/*',
+
 			// Internal access only
 			'admin/*',
 			'debug/*',
