@@ -4,7 +4,7 @@
 /* @var $content string */
 
 use backend\assets\AppAsset;
-// use yii\helpers\Html;
+use yii\helpers\Html;
 // use yii\bootstrap\Nav;
 // use yii\bootstrap\NavBar;
 // use yii\widgets\Breadcrumbs;
@@ -21,7 +21,6 @@ AppAsset::register($this);
 	<!--<![endif]-->
 	<!-- start: HEAD -->
 	<head>
-		<title><?= Yii::$app->name ?></title>
 		<!-- start: META -->
 		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
 		<meta charset="<?= Yii::$app->charset ?>" />
@@ -34,6 +33,8 @@ AppAsset::register($this);
 		<!-- start: GOOGLE FONTS -->
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<!-- end: GOOGLE FONTS -->
+		<?= Html::csrfMetaTags() ?>
+	    <title><?= Html::encode($this->title) ?></title>
 		<!-- start: MAIN CSS -->
 		<?php $this->head() ?>
 		<!-- end: MAIN CSS -->
@@ -77,7 +78,7 @@ AppAsset::register($this);
 						</div>
 						<ul class="main-navigation-menu">
 							<li class="active open">
-								<a href="index.html">
+								<a href="/dashboard/">
 									<div class="item-content">
 										<div class="item-media">
 											<i class="ti-home"></i>
@@ -143,11 +144,13 @@ AppAsset::register($this);
 											Lock Screen
 										</a>
 									</li>
+									<?php if (Yii::$app->user->id): ?>
 									<li>
-										<a href="login_signin.html">
-											Log Out
+										<a id="logout">
+											Logout
 										</a>
 									</li>
+									<?php endif; ?>
 								</ul>
 							</li>
 							<!-- end: USER OPTIONS DROPDOWN -->
@@ -186,6 +189,11 @@ AppAsset::register($this);
 			</footer>
 			<!-- end: FOOTER -->
 		</div>
+		<?php
+		echo  Html::beginForm(['/user/logout'], 'post')
+			. Html::submitButton('_',['class' => 'btn btn-link logout hidden'])
+			. Html::endForm()
+		?>
 		<!-- start: MAIN JAVASCRIPTS -->
 		<?php $this->endBody() ?>
 		<!-- end: MAIN JAVASCRIPTS -->
@@ -201,6 +209,10 @@ AppAsset::register($this);
 			jQuery(document).ready(function() {
 				Main.init();
 				Index.init();
+			});
+
+			$('#logout').on('click', function(){
+				$('.logout').click();
 			});
 		</script>
 		<!-- end: JavaScript Event Handlers for this page -->

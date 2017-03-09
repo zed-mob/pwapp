@@ -177,14 +177,6 @@ var Main = function() {
 
 		});
 	};
-	//switchery
-	var switcheryHandler = function() {
-		var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
-
-		elems.forEach(function(html) {
-			var switchery = new Switchery(html);
-		});
-	};
 	//search form
 	var searchHandler = function() {
 		var elem = $('.search-form');
@@ -205,91 +197,6 @@ var Main = function() {
 				$(".s-remove").trigger('click');
 				$(document).off("mousedown touchstart", closeForm);
 			}
-		};
-	};
-	// settings
-	var settingsHandler = function() {
-		var clipSetting = new Object, appSetting = new Object;
-		clipSetting = {
-			fixedHeader: true,
-			fixedSidebar: true,
-			closedSidebar: false,
-			fixedFooter: false,
-			theme: 'theme-1'
-		};
-		if($.cookie) {
-			if($.cookie("clip-setting")) {
-				appSetting = jQuery.parseJSON($.cookie("clip-setting"));
-			} else {
-				appSetting = clipSetting;
-			}
-		};
-
-		appSetting.fixedHeader ? app.addClass('app-navbar-fixed') : app.removeClass('app-navbar-fixed');
-		appSetting.fixedSidebar ? app.addClass('app-sidebar-fixed') : app.removeClass('app-sidebar-fixed');
-		appSetting.closedSidebar ? app.addClass('app-sidebar-closed') : app.removeClass('app-sidebar-closed');
-		appSetting.fixedFooter ? app.addClass('app-footer-fixed') : app.removeClass('app-footer-fixed');
-		app.hasClass("app-navbar-fixed") ? $('#fixed-header').prop('checked', true) : $('#fixed-header').prop('checked', false);
-		app.hasClass("app-sidebar-fixed") ? $('#fixed-sidebar').prop('checked', true) : $('#fixed-sidebar').prop('checked', false);
-		app.hasClass("app-sidebar-closed") ? $('#closed-sidebar').prop('checked', true) : $('#closed-sidebar').prop('checked', false);
-		app.hasClass("app-footer-fixed") ? $('#fixed-footer').prop('checked', true) : $('#fixed-footer').prop('checked', false);
-		$('#skin_color').attr("href", "assets/css/themes/" + appSetting.theme + ".css");
-		$('input[name="setting-theme"]').each(function() {
-			$(this).val() == appSetting.theme ? $(this).prop('checked', true) : $(this).prop('checked', false);
-		});
-		switchLogo(appSetting.theme);
-
-		$('input[name="setting-theme"]').change(function() {
-			var selectedTheme = $(this).val();
-			$('#skin_color').attr("href", "assets/css/themes/" + selectedTheme + ".css");
-			switchLogo(selectedTheme);
-			appSetting.theme = selectedTheme;
-			$.cookie("clip-setting", JSON.stringify(appSetting));
-
-		});
-
-		$('#fixed-header').change(function() {
-			$(this).is(":checked") ? app.addClass("app-navbar-fixed") : app.removeClass("app-navbar-fixed");
-			appSetting.fixedHeader = $(this).is(":checked");
-			$.cookie("clip-setting", JSON.stringify(appSetting));
-		});
-		$('#fixed-sidebar').change(function() {
-			$(this).is(":checked") ? app.addClass("app-sidebar-fixed") : app.removeClass("app-sidebar-fixed");
-			appSetting.fixedSidebar = $(this).is(":checked");
-			$.cookie("clip-setting", JSON.stringify(appSetting));
-		});
-		$('#closed-sidebar').change(function() {
-			$(this).is(":checked") ? app.addClass("app-sidebar-closed") : app.removeClass("app-sidebar-closed");
-			appSetting.closedSidebar = $(this).is(":checked");
-			$.cookie("clip-setting", JSON.stringify(appSetting));
-		});
-		$('#fixed-footer').change(function() {
-			$(this).is(":checked") ? app.addClass("app-footer-fixed") : app.removeClass("app-footer-fixed");
-			appSetting.fixedFooter = $(this).is(":checked");
-			$.cookie("clip-setting", JSON.stringify(appSetting));
-		});
-		function switchLogo(theme) {
-			switch (theme) {
-				case "theme-2":
-				case "theme-3":
-				case "theme-5":
-				case "theme-6":
-					$(".navbar-brand img").attr("src", "assets/images/logo2.png");
-					break;
-
-				default:
-					$(".navbar-brand img").attr("src", "assets/images/logo.png");
-					break;
-			};
-		};
-		function defaultSetting() {
-			$('#fixed-header').prop('checked', true);
-			$('#fixed-sidebar').prop('checked', true);
-			$('#closed-sidebar').prop('checked', false);
-			$('#fixed-footer').prop('checked', false);
-			$('#skin_color').attr("href", "assets/css/themes/theme-1.css");
-			$(".navbar-brand img").attr("src", "assets/images/logo.png");
-
 		};
 	};
 	// function to allow a button or a link to open a tab
@@ -406,7 +313,6 @@ var Main = function() {
 
 	return {
 		init: function() {
-			settingsHandler();
 			toggleClassOnElement();
 			sidebarHandler();
 			navbarHandler();
@@ -414,7 +320,6 @@ var Main = function() {
 			tooltipHandler();
 			popoverHandler();
 			perfectScrollbarHandler();
-			switcheryHandler();
 			resizeHandler();
 			showTabHandler();
 			panelScrollHandler();

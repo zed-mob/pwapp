@@ -384,7 +384,7 @@
 				</div>
 				<div class="panel-body no-padding">
 					<div class="padding-10">
-						<img width="50" height="50" src="assets/images/avatar-1.jpg" class="img-circle pull-left" alt="">
+						<img width="50" height="50" src="<?= $this->theme->baseUrl ?>/assets/images/avatar-1.jpg" class="img-circle pull-left" alt="">
 						<h4 class="no-margin inline-block padding-5">Peter Clark <span class="block text-small text-left">UI Designer</span></h4>
 						<div class="pull-right padding-15">
 							<span class="text-small text-bold text-green"><i class="fa fa-dot-circle-o"></i> on-line</span>
@@ -428,7 +428,7 @@
 									<table class="table no-margin">
 										<tbody>
 											<tr>
-												<td class="center"><img alt="image" class="img-circle" src="assets/images/avatar-1-small.jpg"></td>
+												<td class="center"><img alt="image" class="img-circle" src="<?= $this->theme->baseUrl ?>/assets/images/avatar-1-small.jpg"></td>
 												<td><span class="text-small block text-light">UI Designer</span><span>Peter Clark</span></td>
 												<td class="center">
 												<div class="cl-effect-13">
@@ -438,7 +438,7 @@
 												</div></td>
 											</tr>
 											<tr>
-												<td class="center"><img alt="image" class="img-circle" src="assets/images/avatar-2-small.jpg"></td>
+												<td class="center"><img alt="image" class="img-circle" src="<?= $this->theme->baseUrl ?>/assets/images/avatar-2-small.jpg"></td>
 												<td><span class="text-small block text-light">Content Designer</span><span>Nicole Bell</span></td>
 												<td class="center">
 												<div class="cl-effect-13">
@@ -448,7 +448,7 @@
 												</div></td>
 											</tr>
 											<tr>
-												<td class="center"><img alt="image" class="img-circle" src="assets/images/avatar-3-small.jpg"></td>
+												<td class="center"><img alt="image" class="img-circle" src="<?= $this->theme->baseUrl ?>/assets/images/avatar-3-small.jpg"></td>
 												<td><span class="text-small block text-light">Visual Designer</span><span>Steven Thompson</span></td>
 												<td class="center">
 												<div class="cl-effect-13">
@@ -458,7 +458,7 @@
 												</div></td>
 											</tr>
 											<tr>
-												<td class="center"><img alt="image" class="img-circle" src="assets/images/avatar-5-small.jpg"></td>
+												<td class="center"><img alt="image" class="img-circle" src="<?= $this->theme->baseUrl ?>/assets/images/avatar-5-small.jpg"></td>
 												<td><span class="text-small block text-light">Senior Designer</span><span>Kenneth Ross</span></td>
 												<td class="center">
 												<div class="cl-effect-13">
@@ -468,7 +468,7 @@
 												</div></td>
 											</tr>
 											<tr>
-												<td class="center"><img alt="image" class="img-circle" src="assets/images/avatar-4-small.jpg"></td>
+												<td class="center"><img alt="image" class="img-circle" src="<?= $this->theme->baseUrl ?>/assets/images/avatar-4-small.jpg"></td>
 												<td><span class="text-small block text-light">Web Editor</span><span>Ella Patterson</span></td>
 												<td class="center">
 												<div class="cl-effect-13">
@@ -486,7 +486,7 @@
 									<table class="table no-margin">
 										<tbody>
 											<tr>
-												<td class="center"><img alt="image" class="img-circle" src="assets/images/avatar-3-small.jpg"></td>
+												<td class="center"><img alt="image" class="img-circle" src="<?= $this->theme->baseUrl ?>/assets/images/avatar-3-small.jpg"></td>
 												<td><span class="text-small block text-light">Visual Designer</span><span>Steven Thompson</span></td>
 												<td class="center">
 												<div class="cl-effect-13">
@@ -496,7 +496,7 @@
 												</div></td>
 											</tr>
 											<tr>
-												<td class="center"><img alt="image" class="img-circle" src="assets/images/avatar-5-small.jpg"></td>
+												<td class="center"><img alt="image" class="img-circle" src="<?= $this->theme->baseUrl ?>/assets/images/avatar-5-small.jpg"></td>
 												<td><span class="text-small block text-light">Senior Designer</span><span>Kenneth Ross</span></td>
 												<td class="center">
 												<div class="cl-effect-13">
@@ -506,7 +506,7 @@
 												</div></td>
 											</tr>
 											<tr>
-												<td class="center"><img alt="image" class="img-circle" src="assets/images/avatar-4-small.jpg"></td>
+												<td class="center"><img alt="image" class="img-circle" src="<?= $this->theme->baseUrl ?>/assets/images/avatar-4-small.jpg"></td>
 												<td><span class="text-small block text-light">Web Editor</span><span>Ella Patterson</span></td>
 												<td class="center">
 												<div class="cl-effect-13">
@@ -709,7 +709,7 @@
 										Hi, Nicole
 									</div>
 									<div class="message-avatar">
-										<img src="assets/images/avatar-1.jpg" alt="">
+										<img src="<?= $this->theme->baseUrl ?>/assets/images/avatar-1.jpg" alt="">
 									</div>
 								</div>
 								<div class="message">
@@ -720,7 +720,7 @@
 										How are you?
 									</div>
 									<div class="message-avatar">
-										<img src="assets/images/avatar-1.jpg" alt="">
+										<img src="<?= $this->theme->baseUrl ?>/assets/images/avatar-1.jpg" alt="">
 									</div>
 								</div>
 							</li>
@@ -733,7 +733,7 @@
 										Hi, i am good
 									</div>
 									<div class="message-avatar">
-										<img src="assets/images/avatar-2.jpg" alt="">
+										<img src="<?= $this->theme->baseUrl ?>/assets/images/avatar-2.jpg" alt="">
 									</div>
 								</div>
 							</li>
@@ -746,7 +746,7 @@
 										Glad to see you ;)
 									</div>
 									<div class="message-avatar">
-										<img src="assets/images/avatar-1.jpg" alt="">
+										<img src="<?= $this->theme->baseUrl ?>/assets/images/avatar-1.jpg" alt="">
 									</div>
 								</div>
 							</li>
@@ -762,7 +762,7 @@
 										What do you think about my new Dashboard?
 									</div>
 									<div class="message-avatar">
-										<img src="assets/images/avatar-2.jpg" alt="">
+										<img src="<?= $this->theme->baseUrl ?>/assets/images/avatar-2.jpg" alt="">
 									</div>
 								</div>
 							</li>
@@ -778,7 +778,7 @@
 										Alo...
 									</div>
 									<div class="message-avatar">
-										<img src="assets/images/avatar-2.jpg" alt="">
+										<img src="<?= $this->theme->baseUrl ?>/assets/images/avatar-2.jpg" alt="">
 									</div>
 								</div>
 								<div class="message">
@@ -789,7 +789,7 @@
 										Are you there?
 									</div>
 									<div class="message-avatar">
-										<img src="assets/images/avatar-2.jpg" alt="">
+										<img src="<?= $this->theme->baseUrl ?>/assets/images/avatar-2.jpg" alt="">
 									</div>
 								</div>
 							</li>
@@ -802,7 +802,7 @@
 										Hi, i am here
 									</div>
 									<div class="message-avatar">
-										<img src="assets/images/avatar-1.jpg" alt="">
+										<img src="<?= $this->theme->baseUrl ?>/assets/images/avatar-1.jpg" alt="">
 									</div>
 								</div>
 								<div class="message">
@@ -813,7 +813,7 @@
 										Your Dashboard is great
 									</div>
 									<div class="message-avatar">
-										<img src="assets/images/avatar-1.jpg" alt="">
+										<img src="<?= $this->theme->baseUrl ?>/assets/images/avatar-1.jpg" alt="">
 									</div>
 								</div>
 							</li>
@@ -829,7 +829,7 @@
 										How does the binding and digesting work in AngularJS?, Peter?
 									</div>
 									<div class="message-avatar">
-										<img src="assets/images/avatar-2.jpg" alt="">
+										<img src="<?= $this->theme->baseUrl ?>/assets/images/avatar-2.jpg" alt="">
 									</div>
 								</div>
 							</li>
@@ -842,7 +842,7 @@
 										oh that's your question?
 									</div>
 									<div class="message-avatar">
-										<img src="assets/images/avatar-1.jpg" alt="">
+										<img src="<?= $this->theme->baseUrl ?>/assets/images/avatar-1.jpg" alt="">
 									</div>
 								</div>
 								<div class="message">
@@ -853,7 +853,7 @@
 										little reduntant, no?
 									</div>
 									<div class="message-avatar">
-										<img src="assets/images/avatar-1.jpg" alt="">
+										<img src="<?= $this->theme->baseUrl ?>/assets/images/avatar-1.jpg" alt="">
 									</div>
 								</div>
 								<div class="message">
@@ -864,7 +864,7 @@
 										literally we get the question daily
 									</div>
 									<div class="message-avatar">
-										<img src="assets/images/avatar-1.jpg" alt="">
+										<img src="<?= $this->theme->baseUrl ?>/assets/images/avatar-1.jpg" alt="">
 									</div>
 								</div>
 							</li>
@@ -877,7 +877,7 @@
 										I know. I, however, am not a nerd, and want to know
 									</div>
 									<div class="message-avatar">
-										<img src="assets/images/avatar-2.jpg" alt="">
+										<img src="<?= $this->theme->baseUrl ?>/assets/images/avatar-2.jpg" alt="">
 									</div>
 								</div>
 							</li>
@@ -890,7 +890,7 @@
 										for this type of question, wouldn't it be better to try Google?
 									</div>
 									<div class="message-avatar">
-										<img src="assets/images/avatar-1.jpg" alt="">
+										<img src="<?= $this->theme->baseUrl ?>/assets/images/avatar-1.jpg" alt="">
 									</div>
 								</div>
 							</li>
@@ -903,7 +903,7 @@
 										Lucky for us :)
 									</div>
 									<div class="message-avatar">
-										<img src="assets/images/avatar-2.jpg" alt="">
+										<img src="<?= $this->theme->baseUrl ?>/assets/images/avatar-2.jpg" alt="">
 									</div>
 								</div>
 							</li>
