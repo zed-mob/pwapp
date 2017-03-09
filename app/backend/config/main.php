@@ -78,7 +78,7 @@ return [
 
 			// Internal access only
 			'admin/*',
-			'debug/*',
+			// 'debug/*',
 			'gii/*'
 		]
 	],

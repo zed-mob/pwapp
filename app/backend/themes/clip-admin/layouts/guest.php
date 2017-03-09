@@ -65,7 +65,7 @@ AppAsset::register($this);
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
-				Login.init();
+				// Login.init();
 			});
 		</script>
 		<!-- end: JavaScript Event Handlers for this page -->

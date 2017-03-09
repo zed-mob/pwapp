@@ -198,10 +198,10 @@ AppAsset::register($this);
 		<!-- start: JavaScript Event Handlers for this page -->
 		<script src="<?= $this->theme->baseUrl ?>/assets/js/index.js"></script>
 		<script>
-			// jQuery(document).ready(function() {
-			// 	Main.init();
-			// 	Index.init();
-			// });
+			jQuery(document).ready(function() {
+				Main.init();
+				Index.init();
+			});
 		</script>
 		<!-- end: JavaScript Event Handlers for this page -->
 		<!-- end: CLIP-TWO JAVASCRIPTS -->
