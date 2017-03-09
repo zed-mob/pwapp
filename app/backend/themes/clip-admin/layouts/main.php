@@ -11,8 +11,6 @@ use backend\assets\AppAsset;
 // use common\widgets\Alert;
 //
 AppAsset::register($this);
-// echo "<pre>";
-// print_r($this);exit();
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>

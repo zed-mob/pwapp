@@ -64,7 +64,7 @@ return [
 				'baseUrl' => '@web/themes/clip-admin',
 				'pathMap' => [
 					'@backend/views' => '@backend/themes/clip-admin',
-					'@vendor/mdmsoft/yii2-admin/views' => '@backend/themes/clip-admin',
+					'@vendor/mdmsoft/yii2-admin/views' => '@backend/themes/clip-admin/admin',
 					'@backend/modules' => '@backend/themes/clip-admin/modules',
 				],
 			],
