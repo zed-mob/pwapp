@@ -14,6 +14,10 @@ class UserController extends Controller
         return $this->render('index');
     }
 
+	/**
+     * Login
+     * @return string
+     */
 	public function actionLogin()
 	{
 		$this->layout = '@backend/themes/clip-admin/layouts/guest';
@@ -25,7 +29,7 @@ class UserController extends Controller
 		$model = new Login();
 
         if ($model->load(Yii::$app->getRequest()->post()) && $model->login()) {
-            return $this->goBack();
+            return $this->redirect('/admin-dashboard');
         } else {
             return $this->render('login', [
                     'model' => $model,

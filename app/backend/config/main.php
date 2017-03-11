@@ -52,7 +52,7 @@ return [
             'showScriptName'  => false,
             'rules' => [
 				// Dashboard module routes
-				'dashboard' => 'dashboard/default/index',
+				'admin-dashboard' => 'dashboard/dashboard',
 
 				// Admin module routes
 				'password-reset' => 'admin/user/request-password-reset',
