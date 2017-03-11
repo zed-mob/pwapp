@@ -3,14 +3,9 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-use backend\assets\AppAsset;
-// use yii\helpers\Html;
-// use yii\bootstrap\Nav;
-// use yii\bootstrap\NavBar;
-// use yii\widgets\Breadcrumbs;
-// use common\widgets\Alert;
-//
-AppAsset::register($this);
+use backend\assets\LoginAsset;
+
+LoginAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -43,8 +38,6 @@ AppAsset::register($this);
 		<link rel="stylesheet" href="<?= $this->theme->baseUrl ?>/assets/css/plugins.css">
 		<link rel="stylesheet" href="<?= $this->theme->baseUrl ?>/assets/css/themes/theme-2.css"/>
 		<!-- end: CLIP-TWO CSS -->
-		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 	</head>
 	<!-- end: HEAD -->
 	<!-- start: BODY -->
@@ -55,21 +48,6 @@ AppAsset::register($this);
 		<!-- start: MAIN JAVASCRIPTS -->
 		<?php $this->endBody() ?>
 		<!-- end: MAIN JAVASCRIPTS -->
-		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<script src="<?= $this->theme->baseUrl ?>/assets/vendor/jquery-validation/jquery.validate.min.js"></script>
-		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<!-- start: CLIP-TWO JAVASCRIPTS -->
-		<script src="<?= $this->theme->baseUrl ?>/assets/js/main.js"></script>
-		<!-- start: JavaScript Event Handlers for this page -->
-		<script src="<?= $this->theme->baseUrl ?>/assets/js/login.js"></script>
-		<script>
-			jQuery(document).ready(function() {
-				Main.init();
-				// Login.init();
-			});
-		</script>
-		<!-- end: JavaScript Event Handlers for this page -->
-		<!-- end: CLIP-TWO JAVASCRIPTS -->
 	</body>
 	<!-- end: BODY -->
 </html>

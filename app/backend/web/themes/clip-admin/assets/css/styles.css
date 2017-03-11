@@ -4518,8 +4518,8 @@ a.text-light:hover {
 /*  Forms
 /* ---------------------------------------------------------------------- */
 fieldset {
-  background: #ffffff;
-  border: 1px solid #e6e8e8;
+  background: #2f3238;
+  border: 1px solid #949c9c;
   border-radius: 5px;
   margin: 20px 0 20px 0;
   padding: 25px;
@@ -4532,7 +4532,7 @@ fieldset .form-group {
 fieldset legend {
   background: inherit;
   font-family: "Lato", sans-serif;
-  color: #007AFF;
+  color: #D1351F;
   font-size: 15px;
   left: 10px;
   padding: 0 10px;
@@ -4733,7 +4733,7 @@ span.input-icon, span.input-help {
   position: relative;
 }
 
-.form-group > input {
+.input-icon > input {
   padding-left: 30px !important;
   padding-right: 6px;
 }
@@ -4750,7 +4750,7 @@ span.input-help > input {
 
 .input-icon > [class*="fa-"], .input-icon > [class*="ti-"] {
   bottom: 0;
-  color: #007AFF;
+  color: #D1351F;
   display: inline-block;
   left: 5px;
   line-height: 35px;
@@ -5514,7 +5514,7 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .clip-check.check-primary input[type="checkbox"]:checked + label:before {
-  border-color: #007AFF;
+  border-color: #D1351F;
 }
 
 .clip-check.check-warning input[type="checkbox"]:checked + label:before {
@@ -5764,8 +5764,8 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .btn-primary {
-  background-color: #007AFF;
-  border-color: #007AFF;
+  background-color: #D1351F;
+  border-color: #D1351F;
   color: #ffffff;
 }
 .open .btn-primary.dropdown-toggle {
@@ -5773,8 +5773,8 @@ input[type="radio"], input[type="checkbox"] {
   border-color: #4da2ff;
 }
 .btn-primary:hover {
-  background-color: #3395ff !important;
-  border-color: #3395ff;
+  background-color: #e0442e !important;
+  border-color: #e0442e;
   color: #ffffff;
 }
 .btn-primary:active, .btn-primary.active, .btn-primary.active:focus, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary.dropdown-toggle:active:hover {
@@ -9315,6 +9315,10 @@ nav.links a {
 /* ---------------------------------------------------------------------- */
 /*  Login
 /* ---------------------------------------------------------------------- */
+body.login {
+	background: #babdbd;
+}
+
 .main-login {
   margin-top: 0;
   position: relative;
@@ -9328,7 +9332,7 @@ nav.links a {
   padding: 0 10px;
 }
 .main-login .box-login, .main-login .box-forgot, .main-login .box-register {
-  background: #FFFFFF;
+  background: #2f3238;
   border-radius: 5px;
   overflow: hidden;
   padding: 15px;

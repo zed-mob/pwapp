@@ -9,39 +9,13 @@ use yii\bootstrap\ActiveForm;
 $this->title = Yii::t('rbac-admin', 'Login');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<?php /*
-<div class="site-login">
-	asdflaskdfjsdlkfjsldk
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>Please fill out the following fields to login:</p>
-
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
-                <?= $form->field($model, 'username') ?>
-                <?= $form->field($model, 'password')->passwordInput() ?>
-                <?= $form->field($model, 'rememberMe')->checkbox() ?>
-                <div style="color:#999;margin:1em 0">
-                    If you forgot your password you can <?= Html::a('reset it', ['user/request-password-reset']) ?>.
-                    For new user you can <?= Html::a('signup', ['user/signup']) ?>.
-                </div>
-                <div class="form-group">
-                    <?= Html::submitButton(Yii::t('rbac-admin', 'Login'), ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-                </div>
-            <?php ActiveForm::end(); ?>
-        </div>
-    </div>
-</div> */ ?>
 <!-- start: LOGIN -->
 <div class="row">
 	<div class="main-login col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
 		<div class="logo margin-top-30">
-			<h3><?= Html::encode($this->title) ?></h3>
 		</div>
 		<!-- start: LOGIN BOX -->
 		<div class="box-login">
-			<!-- <form class="form-login" action="index.html"> -->
 			<?php $form = ActiveForm::begin(['id' => 'login-form', 'class' => 'form-login']); ?>
 				<fieldset>
 					<legend>
@@ -51,31 +25,27 @@ $this->params['breadcrumbs'][] = $this->title;
 						Please enter your name and password to log in.
 					</p>
 					<?= $form->field($model, 'username', [
-						'template' => "{label}\n<span class='input-icon'>\n{input}\n<i class='fa fa-user'></i></span>\n{hint}\n{error}"
+						'template' => "{label}\n<span class='input-icon'>\n{input}\n
+						<i class='fa fa-user'></i></span>\n{hint}\n{error}"
 					])->textInput(['class' => 'form-control', 'placeholder' => 'Username']) ?>
 
 					<?= $form->field($model, 'password', [
-						
+						'template' => "{label}\n<span class='input-icon'>\n{input}\n<i class='fa fa-lock'></i>
+						".Html::a('I forgot my password', ['user/request-password-reset'], ['class' => 'forgot']).".
+						\n</span>\n{hint}\n{error}"
 					])->passwordInput(['class' => 'form-control password', 'placeholder' => 'Password']) ?>
-					<i class="fa fa-lock"></i>
-					If you forgot your password you can <?= Html::a('reset it', ['user/request-password-reset']) ?>.
-					<div class="form-actions">
-						<div class="checkbox clip-check check-primary">
-							<?= $form->field($model, 'rememberMe')->checkbox() ?>
-						</div>
-					</div>
-					<div class="form-group">
-						<?= Html::submitButton(Yii::t('rbac-admin', 'Login'), ['class' => 'btn btn-primary pull-right', 'name' => 'login-button']) ?>
-						<i class="fa fa-arrow-circle-right"></i>
-					</div>
-					<div class="new-account">
-						For new user you can <?= Html::a('signup', ['user/signup']) ?>.
-					</div>
+
+					<?= $form->field($model, 'rememberMe', [
+						'template' => "<div class='checkbox clip-check check-primary'>\n{input}\n
+						<label for='remember'>
+							Keep me signed in
+						</label>\n{hint}\n{error}</div>\n".Html::submitButton(Yii::t('rbac-admin', 'Login <i class="fa fa-arrow-circle-right"></i>'), ['class' => 'btn btn-primary pull-right', 'name' => 'login-button']),
+						])->checkbox(['id' => 'remember'], false) ?>
 				</fieldset>
 			<?php ActiveForm::end(); ?>
 			<!-- start: COPYRIGHT -->
 			<div class="copyright">
-				&copy; <span class="current-year"></span><span class="text-bold text-uppercase"> ClipTheme</span>. <span>All rights reserved</span>
+				&copy; <span class="current-year"></span><span class="text-bold text-uppercase"> PASS College</span>. <span>All rights reserved</span>
 			</div>
 			<!-- end: COPYRIGHT -->
 		</div>
