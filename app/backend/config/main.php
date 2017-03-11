@@ -79,7 +79,7 @@ return [
 			// Internal access only
 			'admin/*',
 			// 'debug/*',
-			'gii/*'
+			'gii/*',
 		]
 	],
     'params' => $params,

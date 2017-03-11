@@ -9,14 +9,13 @@ use Yii;
  *
  * @property integer $id
  * @property string $username
+ * @property string $auth_key
+ * @property string $password_hash
+ * @property string $password_reset_token
  * @property string $email
- * @property string $password
- * @property string $activkey
- * @property integer $create_at
- * @property integer $lastvisit_at
- * @property integer $superuser
- * @property integer $online
  * @property integer $status
+ * @property integer $created_at
+ * @property integer $updated_at
  *
  * @property Profile $profile
  */
@@ -36,12 +35,10 @@ class User extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['username', 'email', 'password'], 'required'],
-            [['create_at', 'lastvisit_at', 'superuser', 'online', 'status'], 'integer'],
-            [['username'], 'string', 'max' => 20],
-            [['email', 'password', 'activkey'], 'string', 'max' => 128],
-            [['username'], 'unique'],
-            [['email'], 'unique'],
+            [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
+            [['status', 'created_at', 'updated_at'], 'integer'],
+            [['username', 'auth_key'], 'string', 'max' => 32],
+            [['password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
         ];
     }
 
@@ -53,14 +50,13 @@ class User extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'username' => 'Username',
+            'auth_key' => 'Auth Key',
+            'password_hash' => 'Password Hash',
+            'password_reset_token' => 'Password Reset Token',
             'email' => 'Email',
-            'password' => 'Password',
-            'activkey' => 'Activkey',
-            'create_at' => 'Create At',
-            'lastvisit_at' => 'Lastvisit At',
-            'superuser' => 'Superuser',
-            'online' => 'Online',
             'status' => 'Status',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
         ];
     }
 

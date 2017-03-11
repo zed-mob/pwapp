@@ -8,11 +8,17 @@ use Yii;
  * This is the model class for table "profile".
  *
  * @property integer $user_id
+ * @property string $student_id
  * @property string $firstname
  * @property string $lastname
- * @property integer $group_id
- * @property integer $course_id
- * @property string $photo
+ * @property string $phone_no
+ * @property string $mobile_no
+ * @property string $street
+ * @property string $city
+ * @property string $province
+ * @property string $zip_code
+ * @property integer $created_at
+ * @property integer $updated_at
  *
  * @property User $user
  */
@@ -32,9 +38,13 @@ class Profile extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['group_id', 'course_id'], 'integer'],
+            [['created_at', 'updated_at'], 'required'],
+            [['created_at', 'updated_at'], 'integer'],
+            [['student_id'], 'string', 'max' => 15],
             [['firstname', 'lastname'], 'string', 'max' => 50],
-            [['photo'], 'string', 'max' => 255],
+            [['phone_no', 'mobile_no'], 'string', 'max' => 20],
+            [['street', 'city', 'province'], 'string', 'max' => 30],
+            [['zip_code'], 'string', 'max' => 10],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
@@ -46,11 +56,17 @@ class Profile extends \yii\db\ActiveRecord
     {
         return [
             'user_id' => 'User ID',
+            'student_id' => 'Student ID',
             'firstname' => 'Firstname',
             'lastname' => 'Lastname',
-            'group_id' => 'Group ID',
-            'course_id' => 'Course ID',
-            'photo' => 'Photo',
+            'phone_no' => 'Phone No',
+            'mobile_no' => 'Mobile No',
+            'street' => 'Street',
+            'city' => 'City',
+            'province' => 'Province',
+            'zip_code' => 'Zip Code',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
         ];
     }
 
