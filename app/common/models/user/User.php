@@ -3,6 +3,7 @@
 namespace common\models\user;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "user".
@@ -19,8 +20,11 @@ use Yii;
  *
  * @property Profile $profile
  */
-class User extends \yii\db\ActiveRecord
+class User extends ActiveRecord
 {
+	const STATUS_INACTIVE = 0;
+    const STATUS_ACTIVE = 10;
+
     /**
      * @inheritdoc
      */
@@ -66,6 +70,17 @@ class User extends \yii\db\ActiveRecord
     public function getProfile()
     {
         return $this->hasOne(Profile::className(), ['user_id' => 'id']);
+    }
+
+	/**
+     * Finds user by email
+     *
+     * @param string $username
+     * @return static|null
+     */
+    public static function findByEmail($email)
+    {
+        return static::findOne(['email' => $email, 'status' => self::STATUS_ACTIVE]);
     }
 
     /**

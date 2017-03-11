@@ -27,7 +27,6 @@ return [
 	        'class' => 'yii\rbac\DbManager',
 	    ],
 		'user' => [
-			//'class' => 'mdm\admin\models\User',
 	        'identityClass' => 'mdm\admin\models\User',
 	        'loginUrl' => ['user/login'],
 	    ],
@@ -40,8 +39,8 @@ return [
 				'<alias:\w+>' => 'site/<alias>',
 
 				// Account login & logout routes
-				'user/login' => 'admin/user/login',
-				'user/logout' => 'admin/user/logout',
+				'user/login' => 'user/user/login',
+				'user/logout' => 'user/user/logout',
 
 		        // Default routes
 		        '<controller:\w+>/<id:\d+>'				 => '<controller>/view',
