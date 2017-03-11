@@ -5,11 +5,7 @@
 
 use backend\assets\AppAsset;
 use yii\helpers\Html;
-// use yii\bootstrap\Nav;
-// use yii\bootstrap\NavBar;
-// use yii\widgets\Breadcrumbs;
-// use common\widgets\Alert;
-//
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -43,8 +39,6 @@ AppAsset::register($this);
 		<link rel="stylesheet" href="<?= $this->theme->baseUrl ?>/assets/css/plugins.css">
 		<link rel="stylesheet" href="<?= $this->theme->baseUrl ?>/assets/css/themes/theme-2.css"/>
 		<!-- end: CLIP-TWO CSS -->
-		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 	</head>
 	<!-- end: HEAD -->
 	<body>
@@ -117,31 +111,17 @@ AppAsset::register($this);
 					<!-- end: NAVBAR HEADER -->
 					<!-- start: NAVBAR COLLAPSE -->
 					<div class="navbar-collapse collapse">
+						<div id="page-title-nav" class="col-md-5"><h1><?= $this->params['pageTitle'] ?></h1></div>
 						<ul class="nav navbar-right">
 							<!-- start: USER OPTIONS DROPDOWN -->
 							<li class="dropdown current-user">
 								<a href class="dropdown-toggle" data-toggle="dropdown">
-									<img src="<?= $this->theme->baseUrl ?>/assets/images/avatar-1.jpg" alt="Peter"> <span class="username">Peter <i class="ti-angle-down"></i></i></span>
+									<img src="<?= $this->theme->baseUrl ?>/assets/images/avatar-1.jpg" alt="Peter"> <span class="username"><?= ucfirst(Yii::$app->user->identity->username) ?> <i class="ti-angle-down"></i></i></span>
 								</a>
 								<ul class="dropdown-menu dropdown-dark">
 									<li>
 										<a href="pages_user_profile.html">
 											My Profile
-										</a>
-									</li>
-									<li>
-										<a href="pages_calendar.html">
-											My Calendar
-										</a>
-									</li>
-									<li>
-										<a hef="pages_messages.html">
-											My Messages (3)
-										</a>
-									</li>
-									<li>
-										<a href="login_lockscreen.html">
-											Lock Screen
 										</a>
 									</li>
 									<?php if (Yii::$app->user->id): ?>
@@ -208,7 +188,7 @@ AppAsset::register($this);
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
-				Index.init();
+				// Index.init();
 			});
 
 			$('#logout').on('click', function(){
