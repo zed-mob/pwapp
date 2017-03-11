@@ -37,7 +37,6 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="row">
 	<div class="main-login col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
 		<div class="logo margin-top-30">
-			<?php /* <img src="<?= $this->theme->baseUrl ?>/assets/images/logo.png" alt="Clip-Two"/> */ ?>
 			<h3><?= Html::encode($this->title) ?></h3>
 		</div>
 		<!-- start: LOGIN BOX -->
@@ -51,18 +50,15 @@ $this->params['breadcrumbs'][] = $this->title;
 					<p>
 						Please enter your name and password to log in.
 					</p>
-					<div class="form-group">
-						<span class="input-icon">
-							<?= $form->field($model, 'username')->textInput(['class' => 'form-control', 'placeholder' => 'Username']) ?>
-							<i class="fa fa-user"></i> </span>
-					</div>
-					<div class="form-group form-actions">
-						<span class="input-icon">
-							<?= $form->field($model, 'password')->passwordInput(['class' => 'form-control password', 'placeholder' => 'Password']) ?>
-							<i class="fa fa-lock"></i>
-							If you forgot your password you can <?= Html::a('reset it', ['user/request-password-reset']) ?>.
-						</span>
-					</div>
+					<?= $form->field($model, 'username', [
+						'template' => "{label}\n<span class='input-icon'>\n{input}\n<i class='fa fa-user'></i></span>\n{hint}\n{error}"
+					])->textInput(['class' => 'form-control', 'placeholder' => 'Username']) ?>
+
+					<?= $form->field($model, 'password', [
+						
+					])->passwordInput(['class' => 'form-control password', 'placeholder' => 'Password']) ?>
+					<i class="fa fa-lock"></i>
+					If you forgot your password you can <?= Html::a('reset it', ['user/request-password-reset']) ?>.
 					<div class="form-actions">
 						<div class="checkbox clip-check check-primary">
 							<?= $form->field($model, 'rememberMe')->checkbox() ?>

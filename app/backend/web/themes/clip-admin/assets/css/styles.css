@@ -1,4 +1,4 @@
-/* ---------------------------------------------------------------------- 
+/* ----------------------------------------------------------------------
 >>> TABLE OF CONTENT
 -------------------------------------------------------------------------
 1 - Basic Elements & Classes
@@ -4733,7 +4733,7 @@ span.input-icon, span.input-help {
   position: relative;
 }
 
-.input-icon > input {
+.form-group > input {
   padding-left: 30px !important;
   padding-right: 6px;
 }
