@@ -71,14 +71,26 @@ AppAsset::register($this);
 							<span>Main Navigation</span>
 						</div>
 						<ul class="main-navigation-menu">
-							<li class="active open">
-								<a href="/dashboard/">
+							<li id="dashboard" class="">
+								<a href="/admin-dashboard">
 									<div class="item-content">
 										<div class="item-media">
 											<i class="ti-home"></i>
 										</div>
 										<div class="item-inner">
 											<span class="title"> Dashboard </span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li id="manage_accounts" class="">
+								<a href="/user/admin">
+									<div class="item-content">
+										<div class="item-media">
+											<i class="ti-settings"></i>
+										</div>
+										<div class="item-inner">
+											<span class="title"> Manage Accounts </span>
 										</div>
 									</div>
 								</a>
@@ -118,7 +130,7 @@ AppAsset::register($this);
 								<a href class="dropdown-toggle" data-toggle="dropdown">
 									<img src="<?= $this->theme->baseUrl ?>/assets/images/avatar-1.jpg" alt="Peter"> <span class="username"><?= ucfirst(Yii::$app->user->identity->username) ?> <i class="ti-angle-down"></i></i></span>
 								</a>
-								<ul class="dropdown-menu dropdown-dark">
+								<ul class="dropdown-menu dropdown-light dropdown-messages dropdown-small">
 									<li>
 										<a href="pages_user_profile.html">
 											My Profile
@@ -193,6 +205,10 @@ AppAsset::register($this);
 
 			$('#logout').on('click', function(){
 				$('.logout').click();
+			});
+
+			$(document).ready(function(){
+				$('#<?= $this->params['activeBar'] ?>').addClass('active open');
 			});
 		</script>
 		<!-- end: JavaScript Event Handlers for this page -->
