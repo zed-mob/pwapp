@@ -16,9 +16,15 @@ $this->params['breadcrumbs'][] = $this->title;
 CrudAsset::register($this);
 
 ?>
+
+<!-- start: DASHBOARD TITLE -->
+<section id="page-title" class="padding-top-15 padding-bottom-15">
+</section>
+<!-- end: DASHBOARD TITLE -->
 <div class="user-index">
     <div id="ajaxCrudDatatable">
         <?=GridView::widget([
+			// 'layout'=>"{items}\n{pager}",
             'id'=>'crud-datatable',
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
@@ -30,8 +36,8 @@ CrudAsset::register($this);
                     ['role'=>'modal-remote','title'=> 'Create new Users','class'=>'btn btn-default']).
                     Html::a('<i class="glyphicon glyphicon-repeat"></i>', [''],
                     ['data-pjax'=>1, 'class'=>'btn btn-default', 'title'=>'Reset Grid']).
-                    '{toggleData}'.
-                    '{export}'
+                    '{toggleData}'
+                    // '{export}'
                 ],
             ],
             'striped' => true,
@@ -40,7 +46,7 @@ CrudAsset::register($this);
             'panel' => [
                 'type' => 'primary',
                 'heading' => '<i class="glyphicon glyphicon-list"></i> Users listing',
-                'before'=>'<em>* Resize table columns just like a spreadsheet by dragging the column edges.</em>',
+                'before'=>'<p><em class="note-color">* Resize table columns just like a spreadsheet by dragging the column edges.</em><p>',
                 'after'=>BulkButtonWidget::widget([
                             'buttons'=>Html::a('<i class="glyphicon glyphicon-trash"></i>&nbsp; Delete All',
                                 ["bulk-delete"] ,

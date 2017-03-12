@@ -40,7 +40,7 @@ class AdminController extends Controller
     {
 		$this->view->params['pageTitle'] = 'Users';
 		$this->view->params['activeBar'] = 'manage_accounts';
-
+// <span class="label label-sm label-success">Active</span>
         $searchModel = new UserQuery();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 

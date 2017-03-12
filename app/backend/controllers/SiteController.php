@@ -60,7 +60,14 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+		if (!Yii::$app->user->isGuest) {
+            return $this->redirect('admin-dashboard');
+        } else {
+			$this->view->params['pageTitle'] = null;
+			$this->view->params['activeBar'] = null;
+        	return $this->render('index');
+        }
+        // return $this->render('index');
     }
 
     /**

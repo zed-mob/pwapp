@@ -36,6 +36,7 @@ AppAsset::register($this);
 		<!-- end: MAIN CSS -->
 		<!-- start: CLIP-TWO CSS -->
 		<link rel="stylesheet" href="<?= $this->theme->baseUrl ?>/assets/css/styles.css">
+		<link rel="stylesheet" href="<?= $this->theme->baseUrl ?>/assets/css/styles-new.css">
 		<link rel="stylesheet" href="<?= $this->theme->baseUrl ?>/assets/css/plugins.css">
 		<link rel="stylesheet" href="<?= $this->theme->baseUrl ?>/assets/css/themes/theme-2.css"/>
 		<!-- end: CLIP-TWO CSS -->
