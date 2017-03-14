@@ -37,9 +37,7 @@ class ProfileController extends Controller
      * @return mixed
      */
     public function actionIndex()
-    {
-		$this->view->params['pageTitle'] = 'Profile Info';
-		$this->view->params['activeBar'] = 'manage_accounts';
+    {    
         $searchModel = new ProfileQuery();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -56,7 +54,7 @@ class ProfileController extends Controller
      * @return mixed
      */
     public function actionView($id)
-    {
+    {   
         $request = Yii::$app->request;
         if($request->isAjax){
             Yii::$app->response->format = Response::FORMAT_JSON;
@@ -67,7 +65,7 @@ class ProfileController extends Controller
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                             Html::a('Edit',['update','id'=>$id],['class'=>'btn btn-primary','role'=>'modal-remote'])
-                ];
+                ];    
         }else{
             return $this->render('view', [
                 'model' => $this->findModel($id),
@@ -84,7 +82,7 @@ class ProfileController extends Controller
     public function actionCreate()
     {
         $request = Yii::$app->request;
-        $model = new Profile();
+        $model = new Profile();  
 
         if($request->isAjax){
             /*
@@ -99,8 +97,8 @@ class ProfileController extends Controller
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
-
-                ];
+        
+                ];         
             }else if($model->load($request->post()) && $model->save()){
                 return [
                     'forceReload'=>'#crud-datatable-pjax',
@@ -108,9 +106,9 @@ class ProfileController extends Controller
                     'content'=>'<span class="text-success">Create Profile success</span>',
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                             Html::a('Create More',['create'],['class'=>'btn btn-primary','role'=>'modal-remote'])
-
-                ];
-            }else{
+        
+                ];         
+            }else{           
                 return [
                     'title'=> "Create new Profile",
                     'content'=>$this->renderAjax('create', [
@@ -118,8 +116,8 @@ class ProfileController extends Controller
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
-
-                ];
+        
+                ];         
             }
         }else{
             /*
@@ -133,7 +131,7 @@ class ProfileController extends Controller
                 ]);
             }
         }
-
+       
     }
 
     /**
@@ -146,7 +144,7 @@ class ProfileController extends Controller
     public function actionUpdate($id)
     {
         $request = Yii::$app->request;
-        $model = $this->findModel($id);
+        $model = $this->findModel($id);       
 
         if($request->isAjax){
             /*
@@ -161,7 +159,7 @@ class ProfileController extends Controller
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
-                ];
+                ];         
             }else if($model->load($request->post()) && $model->save()){
                 return [
                     'forceReload'=>'#crud-datatable-pjax',
@@ -171,7 +169,7 @@ class ProfileController extends Controller
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                             Html::a('Edit',['update','id'=>$id],['class'=>'btn btn-primary','role'=>'modal-remote'])
-                ];
+                ];    
             }else{
                  return [
                     'title'=> "Update Profile #".$id,
@@ -180,7 +178,7 @@ class ProfileController extends Controller
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
-                ];
+                ];        
             }
         }else{
             /*
@@ -232,7 +230,7 @@ class ProfileController extends Controller
      * @return mixed
      */
     public function actionBulkDelete()
-    {
+    {        
         $request = Yii::$app->request;
         $pks = explode(',', $request->post( 'pks' )); // Array or selected records primary keys
         foreach ( $pks as $pk ) {
@@ -252,7 +250,7 @@ class ProfileController extends Controller
             */
             return $this->redirect(['index']);
         }
-
+       
     }
 
     /**

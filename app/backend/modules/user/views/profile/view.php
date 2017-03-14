@@ -12,6 +12,7 @@ use yii\widgets\DetailView;
         'attributes' => [
             'user_id',
             'student_id',
+            'course_id',
             'firstname',
             'lastname',
             'phone_no',

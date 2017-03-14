@@ -20,16 +20,20 @@ return [
     ],
     [
         'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'course_id',
+    ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'firstname',
     ],
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'lastname',
     ],
-    [
-        'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'phone_no',
-    ],
+    // [
+        // 'class'=>'\kartik\grid\DataColumn',
+        // 'attribute'=>'phone_no',
+    // ],
     // [
         // 'class'=>'\kartik\grid\DataColumn',
         // 'attribute'=>'mobile_no',
