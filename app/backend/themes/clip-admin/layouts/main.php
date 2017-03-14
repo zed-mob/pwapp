@@ -85,16 +85,28 @@ AppAsset::register($this);
 								</a>
 							</li>
 							<li id="manage_accounts" class="">
-								<a href="/user/admin">
+								<a href="javascript:void(0)">
 									<div class="item-content">
 										<div class="item-media">
 											<i class="ti-settings"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title"> Manage Accounts </span>
+											<span class="title"> Account Management </span>
 										</div>
 									</div>
 								</a>
+								<ul class="sub-menu">
+									<li>
+										<a href="/user/admin">
+											<span class="title"> Account Info </span>
+										</a>
+									</li>
+									<li>
+										<a href="/user/profile">
+											<span class="title"> Profile Info </span>
+										</a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 						<!-- end: MAIN NAVIGATION MENU -->
@@ -111,7 +123,7 @@ AppAsset::register($this);
 							<i class="ti-align-justify"></i>
 						</a>
 						<a class="navbar-brand" href="#">
-							<img src="<?= $this->theme->baseUrl ?>/assets/images/logo.png" alt="Clip-Two"/>
+							<img src="" alt=""/>
 						</a>
 						<a href="#" class="sidebar-toggler pull-right visible-md visible-lg" data-toggle-class="app-sidebar-closed" data-toggle-target="#app">
 							<i class="ti-align-justify"></i>

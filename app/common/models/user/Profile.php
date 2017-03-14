@@ -9,6 +9,7 @@ use Yii;
  *
  * @property integer $user_id
  * @property string $student_id
+ * @property integer $course_id
  * @property string $firstname
  * @property string $lastname
  * @property string $phone_no
@@ -20,7 +21,15 @@ use Yii;
  * @property integer $created_at
  * @property integer $updated_at
  *
+ * @property ForumComment[] $forumComments
+ * @property ForumSubcomment[] $forumSubcomments
+ * @property ForumTopic[] $forumTopics
+ * @property Messages[] $messages
+ * @property Messages[] $messages0
+ * @property Messages[] $messages1
+ * @property Post[] $posts
  * @property User $user
+ * @property Course $course
  */
 class Profile extends \yii\db\ActiveRecord
 {
@@ -38,14 +47,15 @@ class Profile extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['created_at', 'updated_at'], 'required'],
-            [['created_at', 'updated_at'], 'integer'],
+            [['course_id', 'created_at', 'updated_at'], 'required'],
+            [['course_id', 'created_at', 'updated_at'], 'integer'],
             [['student_id'], 'string', 'max' => 15],
             [['firstname', 'lastname'], 'string', 'max' => 50],
             [['phone_no', 'mobile_no'], 'string', 'max' => 20],
             [['street', 'city', 'province'], 'string', 'max' => 30],
             [['zip_code'], 'string', 'max' => 10],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
+            [['course_id'], 'exist', 'skipOnError' => true, 'targetClass' => Course::className(), 'targetAttribute' => ['course_id' => 'id']],
         ];
     }
 
@@ -57,6 +67,7 @@ class Profile extends \yii\db\ActiveRecord
         return [
             'user_id' => 'User ID',
             'student_id' => 'Student ID',
+            'course_id' => 'Course ID',
             'firstname' => 'Firstname',
             'lastname' => 'Lastname',
             'phone_no' => 'Phone No',
@@ -73,9 +84,73 @@ class Profile extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
+    public function getForumComments()
+    {
+        return $this->hasMany(ForumComment::className(), ['creator_id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getForumSubcomments()
+    {
+        return $this->hasMany(ForumSubcomment::className(), ['creator_id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getForumTopics()
+    {
+        return $this->hasMany(ForumTopic::className(), ['creator_id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMessages()
+    {
+        return $this->hasMany(Messages::className(), ['owner_id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMessages0()
+    {
+        return $this->hasMany(Messages::className(), ['sender_id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMessages1()
+    {
+        return $this->hasMany(Messages::className(), ['receiver_id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPosts()
+    {
+        return $this->hasMany(Post::className(), ['creator_id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCourse()
+    {
+        return $this->hasOne(Course::className(), ['id' => 'course_id']);
     }
 
     /**

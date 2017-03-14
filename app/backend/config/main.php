@@ -21,6 +21,9 @@ return [
 		'dashboard' => [
             'class' => 'backend\modules\dashboard\Module',
         ],
+		'forum' => [
+            'class' => 'backend\modules\forum\Module',
+        ],
 	],
     'components' => [
 		'request' => [
