@@ -37,7 +37,10 @@ class GroupController extends Controller
      * @return mixed
      */
     public function actionIndex()
-    {    
+    {
+		$this->view->params['pageTitle'] = 'Groups';
+		$this->view->params['activeBar'] = 'groups';
+
         $searchModel = new ForumGroupQuery();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -54,7 +57,7 @@ class GroupController extends Controller
      * @return mixed
      */
     public function actionView($id)
-    {   
+    {
         $request = Yii::$app->request;
         if($request->isAjax){
             Yii::$app->response->format = Response::FORMAT_JSON;
@@ -65,7 +68,7 @@ class GroupController extends Controller
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                             Html::a('Edit',['update','id'=>$id],['class'=>'btn btn-primary','role'=>'modal-remote'])
-                ];    
+                ];
         }else{
             return $this->render('view', [
                 'model' => $this->findModel($id),
@@ -82,7 +85,7 @@ class GroupController extends Controller
     public function actionCreate()
     {
         $request = Yii::$app->request;
-        $model = new ForumGroup();  
+        $model = new ForumGroup();
 
         if($request->isAjax){
             /*
@@ -97,8 +100,8 @@ class GroupController extends Controller
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
-        
-                ];         
+
+                ];
             }else if($model->load($request->post()) && $model->save()){
                 return [
                     'forceReload'=>'#crud-datatable-pjax',
@@ -106,9 +109,9 @@ class GroupController extends Controller
                     'content'=>'<span class="text-success">Create ForumGroup success</span>',
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                             Html::a('Create More',['create'],['class'=>'btn btn-primary','role'=>'modal-remote'])
-        
-                ];         
-            }else{           
+
+                ];
+            }else{
                 return [
                     'title'=> "Create new ForumGroup",
                     'content'=>$this->renderAjax('create', [
@@ -116,8 +119,8 @@ class GroupController extends Controller
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
-        
-                ];         
+
+                ];
             }
         }else{
             /*
@@ -131,7 +134,7 @@ class GroupController extends Controller
                 ]);
             }
         }
-       
+
     }
 
     /**
@@ -144,7 +147,7 @@ class GroupController extends Controller
     public function actionUpdate($id)
     {
         $request = Yii::$app->request;
-        $model = $this->findModel($id);       
+        $model = $this->findModel($id);
 
         if($request->isAjax){
             /*
@@ -159,7 +162,7 @@ class GroupController extends Controller
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
-                ];         
+                ];
             }else if($model->load($request->post()) && $model->save()){
                 return [
                     'forceReload'=>'#crud-datatable-pjax',
@@ -169,7 +172,7 @@ class GroupController extends Controller
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                             Html::a('Edit',['update','id'=>$id],['class'=>'btn btn-primary','role'=>'modal-remote'])
-                ];    
+                ];
             }else{
                  return [
                     'title'=> "Update ForumGroup #".$id,
@@ -178,7 +181,7 @@ class GroupController extends Controller
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
-                ];        
+                ];
             }
         }else{
             /*
@@ -230,7 +233,7 @@ class GroupController extends Controller
      * @return mixed
      */
     public function actionBulkDelete()
-    {        
+    {
         $request = Yii::$app->request;
         $pks = explode(',', $request->post( 'pks' )); // Array or selected records primary keys
         foreach ( $pks as $pk ) {
@@ -250,7 +253,7 @@ class GroupController extends Controller
             */
             return $this->redirect(['index']);
         }
-       
+
     }
 
     /**
