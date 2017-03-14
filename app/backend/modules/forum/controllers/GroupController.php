@@ -39,7 +39,7 @@ class GroupController extends Controller
     public function actionIndex()
     {
 		$this->view->params['pageTitle'] = 'Groups';
-		$this->view->params['activeBar'] = 'groups';
+		$this->view->params['activeBar'] = 'forum';
 
         $searchModel = new ForumGroupQuery();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);

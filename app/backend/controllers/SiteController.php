@@ -12,6 +12,8 @@ use common\models\LoginForm;
  */
 class SiteController extends Controller
 {
+	public $defaultAction = 'index';
+
     /**
      * @inheritdoc
      */
@@ -53,6 +55,14 @@ class SiteController extends Controller
         ];
     }
 
+	public function beforeAction($action)
+	{
+		if (Yii::$app->user->isGuest)
+			return $this->redirect('account-login');
+		else
+			$this->actionIndex();
+	}
+
     /**
      * Displays homepage.
      *
@@ -60,14 +70,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-		if (!Yii::$app->user->isGuest) {
-            return $this->redirect('admin-dashboard');
-        } else {
-			$this->view->params['pageTitle'] = null;
-			$this->view->params['activeBar'] = null;
-        	return $this->render('index');
-        }
-        // return $this->render('index');
+    	return $this->redirect('/admin-dashboard');
     }
 
     /**

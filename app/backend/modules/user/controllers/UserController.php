@@ -45,7 +45,7 @@ class UserController extends Controller
     {
         Yii::$app->getUser()->logout();
 
-        return $this->goHome();
+        return $this->redirect('/account-login');
     }
 
 }

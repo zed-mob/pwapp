@@ -54,9 +54,19 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName'  => false,
             'rules' => [
+				'site-posts' => 'post',
 				// Dashboard module routes
 				'admin-dashboard' => 'dashboard/dashboard',
-
+				// User module routes
+				'user-messages'      => 'user/message',
+				'course-management'  => 'user/course',
+				'user-management'    => 'user/admin',
+				'profile-management' => 'user/profile',
+				// Forum module routes
+				'forum-groups' 		=> 'forum/group',
+				'forum-topics' 		=> 'forum/topic',
+				'forum-comments' 	=> 'forum/comment',
+				'forum-subcomments' => 'forum/subcomment',
 				// Admin module routes
 				'password-reset' => 'admin/user/request-password-reset',
             ],
@@ -79,6 +89,7 @@ return [
 			'user/*',
 			'dashboard/*',
 			'forum/*',
+			'post/*',
 
 			// Internal access only
 			'admin/*',

@@ -97,13 +97,83 @@ AppAsset::register($this);
 								</a>
 								<ul class="sub-menu">
 									<li>
-										<a href="/user/admin">
+										<a href="/user-management">
 											<span class="title"> Account Info </span>
 										</a>
 									</li>
 									<li>
-										<a href="/user/profile">
+										<a href="/profile-management">
 											<span class="title"> Profile Info </span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li id="courses" class="">
+								<a href="/course-management">
+									<div class="item-content">
+										<div class="item-media">
+											<i class="ti-home"></i>
+										</div>
+										<div class="item-inner">
+											<span class="title"> Courses </span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li id="messages" class="">
+								<a href="/user-messages">
+									<div class="item-content">
+										<div class="item-media">
+											<i class="ti-home"></i>
+										</div>
+										<div class="item-inner">
+											<span class="title"> Messages </span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li id="posts" class="">
+								<a href="/site-posts">
+									<div class="item-content">
+										<div class="item-media">
+											<i class="ti-home"></i>
+										</div>
+										<div class="item-inner">
+											<span class="title"> Posts </span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li id="forum" class="">
+								<a href="javascript:void(0)">
+									<div class="item-content">
+										<div class="item-media">
+											<i class="ti-settings"></i>
+										</div>
+										<div class="item-inner">
+											<span class="title"> Forums </span>
+										</div>
+									</div>
+								</a>
+								<ul class="sub-menu">
+									<li>
+										<a href="/forum-groups">
+											<span class="title"> Group </span>
+										</a>
+									</li>
+									<li>
+										<a href="/forum-topics">
+											<span class="title"> Topic </span>
+										</a>
+									</li>
+									<li>
+										<a href="/forum-comments">
+											<span class="title"> Comment </span>
+										</a>
+									</li>
+									<li>
+										<a href="/forum-subcomments">
+											<span class="title"> Sub Comment </span>
 										</a>
 									</li>
 								</ul>
@@ -195,7 +265,7 @@ AppAsset::register($this);
 			<!-- end: FOOTER -->
 		</div>
 		<?php
-		echo  Html::beginForm(['/user/logout'], 'post')
+		echo  Html::beginForm(['/account-logout'], 'post')
 			. Html::submitButton('_',['class' => 'btn btn-link logout hidden'])
 			. Html::endForm()
 		?>
@@ -213,7 +283,6 @@ AppAsset::register($this);
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
-				// Index.init();
 			});
 
 			$('#logout').on('click', function(){

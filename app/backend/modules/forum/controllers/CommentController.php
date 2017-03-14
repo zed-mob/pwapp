@@ -39,7 +39,7 @@ class CommentController extends Controller
     public function actionIndex()
     {
 		$this->view->params['pageTitle'] = 'Comments';
-		$this->view->params['activeBar'] = 'comments';
+		$this->view->params['activeBar'] = 'forum';
 
         $searchModel = new ForumCommentQuery();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);

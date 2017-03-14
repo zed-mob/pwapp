@@ -39,7 +39,7 @@ class TopicController extends Controller
     public function actionIndex()
     {
 		$this->view->params['pageTitle'] = 'Topics';
-		$this->view->params['activeBar'] = 'topics';
+		$this->view->params['activeBar'] = 'forum';
 
         $searchModel = new ForumTopicQuery();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);

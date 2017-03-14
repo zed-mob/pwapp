@@ -39,7 +39,7 @@ class SubcommentController extends Controller
     public function actionIndex()
     {
 		$this->view->params['pageTitle'] = 'Sub Comments';
-		$this->view->params['activeBar'] = 'subcomments';
+		$this->view->params['activeBar'] = 'forum';
 
         $searchModel = new ForumSubcommentQuery();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);

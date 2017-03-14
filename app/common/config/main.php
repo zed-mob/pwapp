@@ -39,8 +39,8 @@ return [
 				'<alias:\w+>' => 'site/<alias>',
 
 				// Account login & logout routes
-				'user/login' => 'user/user/login',
-				'user/logout' => 'user/user/logout',
+				'account-login' => 'user/user/login',
+				'account-logout' => 'user/user/logout',
 
 		        // Default routes
 		        '<controller:\w+>/<id:\d+>'				 => '<controller>/view',
