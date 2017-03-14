@@ -78,6 +78,7 @@ return [
 		'allowActions' => [
 			'user/*',
 			'dashboard/*',
+			'forum/*',
 
 			// Internal access only
 			'admin/*',

@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use common\models\user\Profile;
 
 /**
  * This is the model class for table "post".
@@ -74,8 +75,8 @@ class Post extends \yii\db\ActiveRecord
      * @inheritdoc
      * @return PostQuery the active query used by this AR class.
      */
-    public static function find()
-    {
-        return new PostQuery(get_called_class());
-    }
+    // public static function find()
+    // {
+    //     return new PostQuery(get_called_class());
+    // }
 }
