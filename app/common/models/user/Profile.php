@@ -116,7 +116,7 @@ class Profile extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getMessages0()
+    public function getSentMessages()
     {
         return $this->hasMany(Messages::className(), ['sender_id' => 'user_id']);
     }
@@ -124,7 +124,7 @@ class Profile extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getMessages1()
+    public function getReceivedMessages()
     {
         return $this->hasMany(Messages::className(), ['receiver_id' => 'user_id']);
     }
@@ -157,8 +157,8 @@ class Profile extends \yii\db\ActiveRecord
      * @inheritdoc
      * @return ProfileQuery the active query used by this AR class.
      */
-    public static function find()
-    {
-        return new ProfileQuery(get_called_class());
-    }
+    // public static function find()
+    // {
+    //     return new ProfileQuery(get_called_class());
+    // }
 }

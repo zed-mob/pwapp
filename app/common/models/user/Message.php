@@ -3,6 +3,7 @@
 namespace common\models\user;
 
 use Yii;
+use common\models\user\Profile;
 
 /**
  * This is the model class for table "message".

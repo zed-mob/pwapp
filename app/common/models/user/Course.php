@@ -64,8 +64,8 @@ class Course extends \yii\db\ActiveRecord
      * @inheritdoc
      * @return CourseQuery the active query used by this AR class.
      */
-    public static function find()
-    {
-        return new CourseQuery(get_called_class());
-    }
+    // public static function find()
+    // {
+    //     return new CourseQuery(get_called_class());
+    // }
 }

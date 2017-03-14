@@ -1,16 +1,16 @@
 <?php
 
-namespace common\models\user;
+namespace common\models\forum;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\user\Message;
+use common\models\forum\ForumSubcomment;
 
 /**
- * MessageQuery represents the model behind the search form about `common\models\user\Message`.
+ * ForumSubcommentQuery represents the model behind the search form about `common\models\forum\ForumSubcomment`.
  */
-class MessageQuery extends Message
+class ForumSubcommentQuery extends ForumSubcomment
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class MessageQuery extends Message
     public function rules()
     {
         return [
-            [['id', 'owner_id', 'sender_id', 'receiver_id', 'is_read', 'created_at', 'updated_at'], 'integer'],
-            [['subject', 'body'], 'safe'],
+            [['id', 'comment_id', 'creator_id', 'status', 'updated_at', 'created_at'], 'integer'],
+            [['content'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class MessageQuery extends Message
      */
     public function search($params)
     {
-        $query = Message::find();
+        $query = ForumSubcomment::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -57,16 +57,14 @@ class MessageQuery extends Message
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'owner_id' => $this->owner_id,
-            'sender_id' => $this->sender_id,
-            'receiver_id' => $this->receiver_id,
-            'is_read' => $this->is_read,
-            'created_at' => $this->created_at,
+            'comment_id' => $this->comment_id,
+            'creator_id' => $this->creator_id,
+            'status' => $this->status,
             'updated_at' => $this->updated_at,
+            'created_at' => $this->created_at,
         ]);
 
-        $query->andFilterWhere(['like', 'subject', $this->subject])
-            ->andFilterWhere(['like', 'body', $this->body]);
+        $query->andFilterWhere(['like', 'content', $this->content]);
 
         return $dataProvider;
     }
