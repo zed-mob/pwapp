@@ -2,33 +2,67 @@
 
 namespace common\models;
 
-/**
- * This is the ActiveQuery class for [[Image]].
- *
- * @see Image
- */
-class ImageQuery extends \yii\db\ActiveQuery
-{
-    /*public function active()
-    {
-        return $this->andWhere('[[status]]=1');
-    }*/
+use Yii;
+use yii\base\Model;
+use yii\data\ActiveDataProvider;
+use common\models\Image;
 
+/**
+ * ImageQuery represents the model behind the search form about `common\models\Image`.
+ */
+class ImageQuery extends Image
+{
     /**
      * @inheritdoc
-     * @return Image[]|array
      */
-    public function all($db = null)
+    public function rules()
     {
-        return parent::all($db);
+        return [
+            [['id', 'album_id'], 'integer'],
+            [['filename', 'filepath'], 'safe'],
+        ];
     }
 
     /**
      * @inheritdoc
-     * @return Image|array|null
      */
-    public function one($db = null)
+    public function scenarios()
     {
-        return parent::one($db);
+        // bypass scenarios() implementation in the parent class
+        return Model::scenarios();
+    }
+
+    /**
+     * Creates data provider instance with search query applied
+     *
+     * @param array $params
+     *
+     * @return ActiveDataProvider
+     */
+    public function search($params)
+    {
+        $query = Image::find();
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        $this->load($params);
+
+        if (!$this->validate()) {
+            // uncomment the following line if you do not want to return any records when validation fails
+            // $query->where('0=1');
+            return $dataProvider;
+        }
+
+        $query->andFilterWhere([
+            'id' => $this->id,
+            'album_id' => $this->album_id,
+        ]);
+
+        $query->andFilterWhere(['like', 'filename', $this->filename])
+            ->andFilterWhere(['like', 'filepath', $this->filepath]);
+
+        return $dataProvider;
     }
 }
