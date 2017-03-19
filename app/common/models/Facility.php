@@ -47,8 +47,8 @@ class Facility extends \yii\db\ActiveRecord
      * @inheritdoc
      * @return FacilityQuery the active query used by this AR class.
      */
-    public static function find()
-    {
-        return new FacilityQuery(get_called_class());
-    }
+    // public static function find()
+    // {
+    //     return new FacilityQuery(get_called_class());
+    // }
 }

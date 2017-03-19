@@ -47,8 +47,8 @@ class About extends \yii\db\ActiveRecord
      * @inheritdoc
      * @return AboutQuery the active query used by this AR class.
      */
-    public static function find()
-    {
-        return new AboutQuery(get_called_class());
-    }
+    // public static function find()
+    // {
+    //     return new AboutQuery(get_called_class());
+    // }
 }

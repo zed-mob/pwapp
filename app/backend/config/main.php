@@ -90,6 +90,16 @@ return [
 			'dashboard/*',
 			'forum/*',
 			'post/*',
+			'about/*',
+			'admission/*',
+			'album/*',
+			'banner/*',
+			'facility/*',
+			'faq/*',
+			'faq-category/*',
+			'image/*',
+			'offered-course/*',
+			'organization/*',
 
 			// Internal access only
 			'admin/*',

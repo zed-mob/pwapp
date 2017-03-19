@@ -55,8 +55,8 @@ class FaqCategory extends \yii\db\ActiveRecord
      * @inheritdoc
      * @return FaqCategoryQuery the active query used by this AR class.
      */
-    public static function find()
-    {
-        return new FaqCategoryQuery(get_called_class());
-    }
+    // public static function find()
+    // {
+    //     return new FaqCategoryQuery(get_called_class());
+    // }
 }

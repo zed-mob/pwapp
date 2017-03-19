@@ -47,8 +47,8 @@ class OfferedCourse extends \yii\db\ActiveRecord
      * @inheritdoc
      * @return OfferedCourseQuery the active query used by this AR class.
      */
-    public static function find()
-    {
-        return new OfferedCourseQuery(get_called_class());
-    }
+    // public static function find()
+    // {
+    //     return new OfferedCourseQuery(get_called_class());
+    // }
 }

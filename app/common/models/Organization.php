@@ -57,8 +57,8 @@ class Organization extends \yii\db\ActiveRecord
      * @inheritdoc
      * @return OrganizationQuery the active query used by this AR class.
      */
-    public static function find()
-    {
-        return new OrganizationQuery(get_called_class());
-    }
+    // public static function find()
+    // {
+    //     return new OrganizationQuery(get_called_class());
+    // }
 }
