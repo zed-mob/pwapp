@@ -2,9 +2,9 @@
 school-website
 
 ### Composer
-Yii2 uses [Composer](https://getcomposer.org/), a dependency manager, to manage all packages required to run a web application. In this regard, we are adding a container to hold this tool.
+Yii2 uses [Composer](https://getcomposer.org/), a dependency manager, to manage all packages required to run a web application.
 
-A **vendor** directory is not included in the application's version control because all packages must be installed via Composer at runtime. When all containers have finished initialization, open a docker console and access your **app** directory then run these commands to install dependencies:
+A **vendor** directory is not included in the application's version control because all packages must be installed via Composer. To install open a console and access your **app** directory then run these commands to install dependencies:
 
 ```
 sudo run composer global require "fxp/composer-asset-plugin:^1.2.0"
