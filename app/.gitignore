@@ -7,11 +7,11 @@
 .idea
 
 # env files
-.env
-.env-dist
+#.env
+#.env-dist
 
 # htacces
-.htaccess
+#.htaccess
 
 # netbeans project files
 nbproject
